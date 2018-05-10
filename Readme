@@ -1,0 +1,7 @@
+run with 
+	rackup config.ru
+
+Migration!
+ in terminal execute 
+ 		require './song'
+ 		Song.auto_migrate!
