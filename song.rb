@@ -102,7 +102,7 @@ class SongController < Sinatra::Base
 	post '/' do
 		protected!
 		flash[:notice] = "Song successfully added" if create_song
-		redirect to("/#{song.id}")
+		redirect to("/#{@song.id}")
 	end
 
 	put '/:id' do
@@ -110,7 +110,7 @@ class SongController < Sinatra::Base
 		if song.update(params[:song])
 			flash[:notice] = "Song successfully updated"
 		end
-		redirect to("/#{song.id}")
+		redirect to("/#{@song.id}")
 	end
 
 	delete '/:id' do
@@ -118,6 +118,6 @@ class SongController < Sinatra::Base
 		if find_song.destroy
 			flash[:notice] = "Song deleted"
 		end
-		redirect to('/songs')
+		redirect to('/')
 	end
 end
