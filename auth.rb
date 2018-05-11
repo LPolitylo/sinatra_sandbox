@@ -11,6 +11,10 @@ module Sinatra
 			def protected!
 				halt 401,slim(:unauthorized) unless authorized?
 			end
+
+			def admin?
+				session[:admin]
+			end
 		end
 		
 		def self.registered(app)

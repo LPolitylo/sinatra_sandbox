@@ -110,7 +110,7 @@ class SongController < Sinatra::Base
 		if song.update(params[:song])
 			flash[:notice] = "Song successfully updated"
 		end
-		redirect to("/#{@song.id}")
+		redirect to("/#{song.id}")
 	end
 
 	delete '/:id' do

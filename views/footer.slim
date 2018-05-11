@@ -1,0 +1,8 @@
+footer
+  - if authorized?
+    a href="/logout" log out
+    section
+    - if admin? 
+      a href="/admin" admin panel
+  - else
+    a href="/login" log in      
