@@ -32,6 +32,7 @@ module SongHelpers
 	end
 
 	def create_song
+		puts params
 		@song = Song.create(params[:song])
 	end
 end
